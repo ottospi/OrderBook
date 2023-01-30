@@ -37,14 +37,14 @@ export default function Home() {
     setCode(text?.current.value?.toLowerCase());
   };
 
-  const { lastJsonMessage } = useWebSocket(
+  const { lastJsonMessage }: object | any = useWebSocket(
     `wss://stream.binance.com:9443/ws/${code.toLowerCase()}@depth`,
     {
       onOpen: () => {},
       onMessage: () => {
-        if (lastJsonMessage) {
-          setSell(lastJsonMessage!.b);
-          setBuy(lastJsonMessage!.a);
+        if (lastJsonMessage !== null) {
+          setSell(lastJsonMessage?.b);
+          setBuy(lastJsonMessage?.a);
         }
       },
       onError: (event) => {
@@ -56,7 +56,7 @@ export default function Home() {
     }
   );
 
-  const { lastJsonMessage: lastDataTicker } = useWebSocket(
+  const { lastJsonMessage: lastDataTicker }: object | any = useWebSocket(
     `wss://stream.binance.com:9443/ws/${code.toLowerCase()}@ticker`,
     {
       onOpen: () => {},

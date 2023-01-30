@@ -7,5 +7,6 @@ export interface IvaluesListProps {
   value: number;
 }
 // valuesList = [{ label: '0.01', value: 0.01 },
-export type lastBidAskTypes = info[];
+
+export type lastBidAskTypes = any;
 // lastBidAsk

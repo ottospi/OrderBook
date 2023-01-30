@@ -12,10 +12,12 @@ import { info } from '../../types';
 interface Iprops {
   data: info[];
   type: string;
-  refValue: {
-    label: string;
-    value: number;
-  };
+  refValue:
+    | {
+        label: string;
+        value: number;
+      }
+    | any;
 }
 
 export default function TableOrderBook(props: Iprops) {
