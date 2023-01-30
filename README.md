@@ -1,6 +1,6 @@
 # OrderBook
 
-## OrderBook from Binance api
+OrderBook from Binance api
 
 version: 1.0.0
 
